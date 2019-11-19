@@ -9,6 +9,7 @@ $config = [
     'bootstrap' => ['log'],
     'defaultRoute' => 'post/index',
     'layout' => 'basic',
+    'language' => 'ru',
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm' => '@vendor/npm-asset',

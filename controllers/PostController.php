@@ -13,7 +13,10 @@ class PostController extends AppController
 {
     public function actionIndex()
     {
-        $query = Post::find()->select('id, title, excerpt')->orderBy('id DESC');
+        $query = Post::find()->select('id, title, excerpt, category_id')
+            ->with('category')
+            ->orderBy('id DESC');
+
         $pages = new Pagination([
             'totalCount' => $query->count(),
             'pageSize' => 2,

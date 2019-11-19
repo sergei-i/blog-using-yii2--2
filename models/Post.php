@@ -12,4 +12,9 @@ class Post extends  ActiveRecord
     {
         return 'post';
     }
+
+    public function getCategory()
+    {
+        return $this->hasOne(Category::class, ['id' => 'category_id']);
+    }
 }
