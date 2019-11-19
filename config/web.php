@@ -56,6 +56,7 @@ $config = [
                 'post/<id:\d+>' => 'post/view',
                 'page/<page:\d>' => 'post/index',
                 '/' => 'post/index',
+                'category/<id:\d+>' => 'category/view'
             ],
         ],
 

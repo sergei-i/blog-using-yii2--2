@@ -6,10 +6,10 @@ namespace app\models;
 
 use yii\db\ActiveRecord;
 
-class Post extends  ActiveRecord
+class Category extends ActiveRecord
 {
     public static function tableName()
     {
-        return 'post';
+        return 'category';
     }
 }
