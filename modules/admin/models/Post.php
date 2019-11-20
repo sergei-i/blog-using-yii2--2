@@ -8,6 +8,7 @@ use Yii;
  * This is the model class for table "post".
  *
  * @property int $id
+ * @property int $category_id
  * @property string $title
  * @property string $excerpt
  * @property string $text
@@ -30,7 +31,8 @@ class Post extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['title', 'excerpt', 'text'], 'required'],
+            [['category_id', 'title', 'excerpt', 'text'], 'required'],
+            [['category_id'], 'integer'],
             [['text'], 'string'],
             [['title', 'excerpt', 'keywords', 'description'], 'string', 'max' => 255],
         ];
@@ -43,11 +45,17 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             'id' => 'ID',
+            'category_id' => 'Category',
             'title' => 'Title',
             'excerpt' => 'Excerpt',
             'text' => 'Text',
             'keywords' => 'Keywords',
             'description' => 'Description',
         ];
+    }
+
+    public function getCategory()
+    {
+        return $this->hasOne(Category::class, ['id' => 'category_id']);
     }
 }

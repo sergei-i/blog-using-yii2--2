@@ -66,7 +66,8 @@ $config = [
     'modules' => [
         'admin' => [
             'class' => 'app\modules\admin\Module',
-            'defaultRoute' => 'post/index'
+            'defaultRoute' => 'post/index',
+            'layout' => 'admin',
         ],
     ],
 ];
